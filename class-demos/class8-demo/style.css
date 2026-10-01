@@ -1,0 +1,21 @@
+/* Q: What is p when defining a rule in CSS? */
+/* A: style of the paragraphs, the <p> tags, is a selector */
+p {
+  /* Q: What is the property that manipulates the horizontal size of the block? Write that property and give it a value of 60%*/
+  width: 60%
+    /* Q: What are the other units of measurement we use in CSS? */
+    /* A: filling rules such as flex, fit-content, 
+    and px pt em, and other matrix or emperior units */
+}
+
+/* To be completed as a class together: */
+/* Select "blue" class */
+.blue {
+  background-color: rgb(255, 125, 220)
+}
+
+/* Select "main" id */
+#main {
+  border: 3px solid red;
+  background-color: blueviolet;
+}
