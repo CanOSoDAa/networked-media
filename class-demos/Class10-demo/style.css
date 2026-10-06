@@ -1,0 +1,39 @@
+/*multiple selector using , */
+
+
+html,
+body {
+    width: 100vw;
+    /*vw = viewport width */
+    height: 100vh;
+    /*vh = viewport height */
+
+    /*removing scroll */
+    overflow: hidden;
+    margin: 0;
+    /* change calculation to border-box to include margin, border, and padding*/
+    padding: border-box;
+}
+
+/*separate selector just for body */
+body {
+    border: 10px solid red;
+    padding: 10px;
+
+}
+
+.parent {
+    background-color: orange;
+    position: relative;
+    z-index: 1;
+}
+
+.child {
+
+    background-color: yellow;
+    position: absolute;
+    /* marign position from the top of the element */
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
