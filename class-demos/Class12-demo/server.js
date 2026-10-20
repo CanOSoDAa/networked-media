@@ -14,7 +14,7 @@ const app = express()
 //allows us to access front-end using GET request by default
 app.use(express.static("public"));
 //allows us to access the body of a POST request
-app.use(express.urlencoded({ extended: true })
+app.use(express.urlencoded({ extended: true }))
 //routes
 //get /firstserver, callback function
 app.get('/firstserver', (request, response) => {
@@ -25,6 +25,6 @@ app.get('/firstserver', (request, response) => {
 //LAST THING
 
 app.listen(8080, () => {
-    console.log('http://127.0.0.1:8080')
+    console.log('http://127.0.0.1:8080/')
 })
 
