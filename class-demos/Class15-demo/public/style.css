@@ -1,0 +1,13 @@
+nav {
+    background-color: yellow;
+
+
+}
+
+/*:visiting is for a tags that has alredy being clicked */
+a,
+a:visiting {
+
+    color: white;
+
+}
