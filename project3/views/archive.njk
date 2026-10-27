@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Archive — Objects With Stories</title>
+
+    <link rel="stylesheet" href="/project3/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <a href="/project3/" class="logo">
+            OBJECTS WITH STORIES
+        </a>
+
+        <nav>
+            <a href="/project3/archive">Archive</a>
+            <a href="/project3/about">About</a>
+            <a href="/project3/upload">Upload</a>
+        </nav>
+
+    </header>
+
+    <main class="archive-page">
+
+        <h1>Archive</h1>
+
+        <div class="gallery">
+
+            {% for object in objects %}
+
+            <article class="object-card">
+
+                <img src="/project3/uploads/{{ object.photo }}" alt="{{ object.title }}">
+
+                <h2>{{ object.title }}</h2>
+
+                <p class="owner">
+                    {{ object.name }}
+                </p>
+
+                <p>
+                    {{ object.description }}
+                </p>
+
+            </article>
+
+            {% endfor %}
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

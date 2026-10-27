@@ -1,0 +1,282 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: white;
+    color: #111;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.home {
+    min-height: 100vh;
+}
+
+.home-content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.home h1 {
+    margin: 0 0 70px;
+    font-size: 42px;
+    font-weight: 400;
+    letter-spacing: -2px;
+}
+
+.home-nav {
+    display: flex;
+    gap: 45px;
+}
+
+.home-nav a {
+    display: inline-block;
+    padding: 18px 30px;
+    border: 2px solid black;
+    font-size: 28px;
+    text-transform: uppercase;
+    transition: transform 0.2s;
+}
+
+.home-nav a:hover {
+    animation:
+        bounce 0.45s infinite alternate,
+        backgroundFlash 0.5s infinite,
+        textColor 0.7s infinite;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes backgroundFlash {
+    0% {
+        background: white;
+    }
+
+    50% {
+        background: black;
+    }
+
+    100% {
+        background: white;
+    }
+}
+
+@keyframes textColor {
+    0% {
+        color: lightblue;
+    }
+
+    16% {
+        color: green;
+    }
+
+    32% {
+        color: red;
+    }
+
+    48% {
+        color: black;
+    }
+
+    64% {
+        color: yellow;
+    }
+
+    80% {
+        color: purple;
+    }
+
+    100% {
+        color: lightblue;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 16px;
+}
+
+.header nav {
+    display: flex;
+    gap: 25px;
+}
+
+.header nav a:hover {
+    text-decoration: underline;
+}
+
+.archive-page {
+    padding: 70px 40px;
+}
+
+.archive-page h1 {
+    font-size: 48px;
+    font-weight: 400;
+    margin: 0 0 80px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px 30px;
+}
+
+.object-card {
+    max-width: 500px;
+}
+
+.object-card img,
+.placeholder-image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    background: #eee;
+}
+
+.object-card h2 {
+    margin: 18px 0 5px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.object-card .owner {
+    margin: 0 0 18px;
+    font-size: 13px;
+    color: #777;
+}
+
+.object-card p {
+    line-height: 1.5;
+}
+
+.about-page {
+    padding: 70px 40px;
+}
+
+.about-page h1 {
+    font-size: 48px;
+    font-weight: 400;
+    margin-bottom: 80px;
+}
+
+.about-text {
+    max-width: 650px;
+    font-size: 22px;
+    line-height: 1.5;
+}
+
+.about-text p {
+    margin-bottom: 35px;
+}
+
+.upload-page {
+    padding: 70px 40px 120px;
+}
+
+.upload-page h1 {
+    font-size: 48px;
+    font-weight: 400;
+    margin-bottom: 80px;
+}
+
+.upload-form {
+    max-width: 650px;
+}
+
+.upload-form label {
+    display: block;
+    margin: 35px 0 10px;
+    font-size: 14px;
+}
+
+.upload-form input[type="text"],
+.upload-form textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #111;
+    padding: 10px 0;
+    font: inherit;
+    background: transparent;
+}
+
+.upload-form textarea {
+    border: 1px solid #111;
+    padding: 15px;
+    resize: vertical;
+}
+
+.upload-form input:focus,
+.upload-form textarea:focus {
+    outline: none;
+}
+
+.upload-form button {
+    margin-top: 40px;
+    padding: 14px 22px;
+    border: 1px solid #111;
+    background: white;
+    font: inherit;
+    cursor: pointer;
+}
+
+.upload-form button:hover {
+    background: #111;
+    color: white;
+}
+
+@media (max-width: 700px) {
+    .header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .home-nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .home-content,
+    .archive-page,
+    .about-page,
+    .upload-page {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .home h1,
+    .archive-page h1,
+    .about-page h1,
+    .upload-page h1 {
+        font-size: 36px;
+    }
+}
