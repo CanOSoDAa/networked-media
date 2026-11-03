@@ -1,0 +1,4 @@
+pwd -> ls to folder 
+npm init -y
+
+npm install masto dotenv 
