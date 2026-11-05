@@ -2,6 +2,9 @@
     "name": "objects-with-stories",
     "version": "1.0.0",
     "description": "Objects With Stories community archive",
+    "license": "ISC",
+    "author": "",
+    "type": "commonjs",
     "main": "server.js",
     "scripts": {
         "start": "node server.js"
@@ -12,6 +15,7 @@
         "nunjucks": "^3.2.4",
         "sqlite3": "^6.0.1"
     },
+    "devDependencies": {},
     "allowScripts": {
         "sqlite3@6.0.1": true
     }
