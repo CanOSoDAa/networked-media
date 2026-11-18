@@ -1,0 +1,19 @@
+form {
+    /* flex display allows the width and height to be adjustable automatically */
+    display: flex;
+    flex-direction: column;
+    /* flex-grow does a proportion calculation */
+    flex-grow: 2;
+
+}
+
+/* good for general webdesign */
+
+.left,
+.right {
+    flex-grow: 1;
+}
+
+body {
+    display: felx;
+}
