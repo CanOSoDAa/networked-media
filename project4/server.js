@@ -1,10 +1,10 @@
-// this is building off of class-19-demo
-// the only difference is adding njk
+
 const express = require('express');
 const nunjucks = require('nunjucks');
 let nedb = require('@seald-io/nedb');
 
 const app = express();
+
 let database = new nedb({
     filename: 'mydatabase.db',
     autoload: true
@@ -12,10 +12,12 @@ let database = new nedb({
 
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
+
 nunjucks.configure('views', {
     autoescape: true,
     express: app,
 });
+
 app.set('view engine', 'njk');
 
 app.get('/', (req, res) => {
@@ -23,10 +25,19 @@ app.get('/', (req, res) => {
 });
 
 app.post('/add-data', (req, res) => {
+
     let dataToBeAdded = {
-        text: req.body.text,
+        name: String(req.body.name || '').trim(),
+        category: String(req.body.category || '').trim(),
+        text: String(req.body.text || '').trim(),
         timestamp: Date.now(),
     };
+
+    if (!dataToBeAdded.name ||
+        !dataToBeAdded.category ||
+        !dataToBeAdded.text) {
+        return res.status(400).send('Please complete all fields.');
+    }
 
     database.insert(dataToBeAdded, (error, newData) => {
         if (error) {
@@ -41,7 +52,12 @@ app.post('/add-data', (req, res) => {
 
 app.get('/get-data', (request, response) => {
     let query = {};
+
     database.find(query, (error, retrievedData) => {
+        if (error) {
+            return response.status(500).send('error retrieving data');
+        }
+
         console.log(retrievedData);
         response.json(retrievedData);
     });

@@ -1,14 +1,42 @@
 <html>
 
 <head>
-    <title>class 20 demo</title>
+    <title>Medieval Bestiary</title>
 </head>
 
 <body>
+
     <form method="POST" action="/add-data">
-        <input type="text" name="text" placeholder="add some text data" required>
+
+        <label>Name:</label>
+        <input type="text" name="name" placeholder="Creature name" required>
+
+        <br><br>
+
+        <label>Category:</label>
+        <select name="category" required>
+            <option value="">Select a category</option>
+            <option value="Beasts">Beasts</option>
+            <option value="Birds">Birds</option>
+            <option value="Fish">Fish</option>
+            <option value="Serpents">Serpents</option>
+            <option value="Plants">Plants</option>
+            <option value="Stones">Stones</option>
+            <option value="Insects">Insects</option>
+        </select>
+
+        <br><br>
+
+        <label>Text:</label>
+        <textarea name="text" rows="5" cols="50" placeholder="Description, moral meaning and source"
+            required></textarea>
+
+        <br><br>
+
         <input type="submit" value="send data">
+
     </form>
+
 </body>
 
 </html>
